@@ -1,18 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import ContactList from './components/ContactList'
-import dummyContacts from './components/ContactList'
-const api = fetch("https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users")
+import { useState } from "react";
+import "./App.css";
+import ContactList from "./components/ContactList";
+import SelectedContact from "./components/SelectedContact";
+
 function App() {
-  const [contacts, setContacts] = useState(dummyContacts)
-  console.log(contacts)
+  const [selectedContactId, setSelectedContactId] = useState(null);
+  
   return (
     <>
+    {selectedContactId ? (
+      <div>
+        Selected Contact View
+      </div>
+    ) : (
+    <h1>Contact List</h1>
       <ContactList />
+    )}
     </>
-  )
+  );
 }
 
 export default App;
