@@ -13,8 +13,7 @@ function App() {
         Selected Contact View
       </div>
     ) : (
-    <h1>Contact List</h1>
-      <ContactList />
+    <><h1>Contact List</h1><ContactList setSelectedContactId={setSelectedContactId} /></>
     )}
     </>
   );
